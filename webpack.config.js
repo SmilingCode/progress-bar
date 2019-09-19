@@ -1,9 +1,15 @@
 const isDevelopment = process.env.NODE_ENV === 'development';
+const path = require('path');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: './src/App.js',
+  output: {
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: '/dist/',
+        filename: 'bundle.js'
+  },
   module: {
     rules: [
       // react handler
@@ -37,8 +43,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
-      filename: "./index.html"
+      template: "./src/index.html"
     })
   ]
 };
