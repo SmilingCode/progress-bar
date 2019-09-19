@@ -10,9 +10,9 @@ The mainly tools have been used in this App are React, Webpack and bootstrap. Re
 
 ## ScreenShot
 
-<p align="center"><img src="progress-bar/screenshots/1.png"></p>
+<p align="center"><img src="screenshots/1.png" /></p>
 
-<p align="center"><img src="progress-bar/screenshots/2.png"></p>
+<p align="center"><img src="screenshots/2.png" height="545" /></p>
 
 ## Deploy
 
