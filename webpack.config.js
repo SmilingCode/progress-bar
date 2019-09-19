@@ -1,3 +1,4 @@
+const isDevelopment = process.env.NODE_ENV === 'development';
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -25,18 +26,12 @@ module.exports = {
       // css handler
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: "css-loader"
-        })
+        use:['style-loader','css-loader']
       },
       // sass handler
       {
         test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader']
-        })
+        use:['style-loader','css-loader', 'sass-loader']
       },
     ]
   },
