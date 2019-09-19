@@ -6,13 +6,13 @@ class Main extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            target: '1',
+            target: '1',    // selected bar
             barsList: [],   // barsList Array
             btnsList: [],   // btnsList Array
-            limit: null
+            limit: null     // upper bound
         }
     }
-
+    // fetch endpoint data
     componentDidMount() {
         fetch('http://pb-api.herokuapp.com/bars')
         .then(res => res.json())
@@ -26,16 +26,16 @@ class Main extends React.Component {
                 barsList: bars,
                 btnsList: buttons,
                 limit
-            })
+            });
         });
     }
-
+    // get selected value from child component
     handleChange(val) {
         this.setState({
             target: val
-        })
+        });
     }
-
+    // control bars UI
     progressClass(target) {
         if (this.state.barsList[target - 1] >= this.state.limit) {
             return 'progress-bar progress-bar-danger progress-bar-striped ' + ((target == this.state.target) ? 'active' : '');
@@ -44,42 +44,46 @@ class Main extends React.Component {
         }
 
     }
-
+    // control selected UI
+    selectedClass(target) {
+        if (this.state.target == target) {
+            return 'col-12 selected';
+        } else {
+            return 'col-12';
+        }
+    }
+    // control button UI
     buttonClass(btnVal) {
         return (btnVal > 0) ? 'btn btn-danger' : 'btn btn-primary';
     }
-
+    // change state value when user clicked correspondant button
     handleBtnClick(btn) {
+        // targeting bar
         let currentBar = this.state.target;
-        // console.log(this.state.barsList)
-        // console.log(this.state.barsList[currentBar - 1])
 
         // update barsList Array
         let barsList = this.state.barsList;
         const newBarsVal = (barsList[currentBar - 1] + btn) <= 0 ? 0 : (barsList[currentBar - 1] + btn);
 
-        barsList.splice(currentBar - 1, 1, newBarsVal)
-        //console.log(barsList)
+        // replace targeting bar info with new data
+        barsList.splice(currentBar - 1, 1, newBarsVal);
         this.setState({
             barsList: barsList
         })
     }
 
     render() {
-
         // bar info
         const barHTML = this.state.barsList.map((bar, i) => {
-
             let barWidth = {
                 width: (bar >= 100) ? 100 + '%' : bar + '%',
                 color: '#000',
                 fontSize: '28px',
                 lineHeight: '52px'
             }
-
             return (
                 <div key={i} className="row bar">
-                    <div className="col-12">
+                    <div className={this.selectedClass(i + 1)}>
                         <div className="progress">
                             <div
                                 className={this.progressClass(i + 1)}
@@ -119,7 +123,7 @@ class Main extends React.Component {
 
                 <div className="row user-control">
                     <div className="buttons">
-                        <Select slctVal={this.handleChange.bind(this)} />
+                        <Select slctVal={this.handleChange.bind(this)} barsList={this.state.barsList} />
                         { btnHTML }
                     </div>
                 </div>

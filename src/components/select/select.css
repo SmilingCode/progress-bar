@@ -41,6 +41,7 @@ select {
   padding: 0 2em;
   color: #fff;
   cursor: pointer;
+  width: 180px;
 }
 /* Arrow */
 .select::after {
