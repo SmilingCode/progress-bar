@@ -6,12 +6,13 @@ This is a progress-bar app with some animation. All the bar status and button va
 
 ## Discription
 
-The mainly tools have been used in this App are React, Webpack and bootstrap. React remains all the data states, which will be altered when click event is triggering. Webpack helps to pack all the html, css, scss and js file, and compress them to a smaller version. Finally, Bootstrap gives this App a responsive layout.
+The mainly tools have been used in this App are **React, Webpack and bootstrap**. React remains all the data states, which will be altered when click event is triggering. Webpack helps to pack all the html, css, scss and js file, and compress them to a smaller version. Finally, Bootstrap gives this App a responsive layout.
 
 ## ScreenShot
 
-<p align="center"><img src="progress-bar/screenshots/1.png"></p>
+<p align="center"><img src="screenshots/1.png" /></p>
 
+<p align="center"><img src="screenshots/2.png" height="545" /></p>
 
 ## Deploy
 
@@ -20,7 +21,7 @@ Firstly, clone this repository to local by running:
 git clone https://github.com/SmilingCode/progress-bar.git
 ```
 
-Secondly, make sure you get all the package in the package.json(both dependencies and devDependencies)
+Secondly, make sure you get all the package in the **package.json**(both dependencies and devDependencies)
 ```javascript
 npm install --save <packageName>
 npm install --save-dev <packageName>
@@ -36,4 +37,4 @@ Another way you would see the App by running
 npm run build
 ```
 
-A dist folder will be generated in the root path, then can see the app with clicking the index.html page under the dist folder.
+A **dist** folder will be generated in the root path, then can see the app with clicking the **index.html** page under the dist folder.
