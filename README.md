@@ -27,14 +27,10 @@ npm install --save <packageName>
 npm install --save-dev <packageName>
 ```
 
-One way to see the App is to run the command line
+Lastly, run the command line
 ```javascript
 npm run start
 ```
 
-Another way you would see the App by running
-```javascript
-npm run build
-```
-
-A **dist** folder will be generated in the root path, then can see the app with clicking the **index.html** page under the dist folder.
+A **dist** folder will be generated in the root path, then click into the dist folder to see the full page.
+END!
