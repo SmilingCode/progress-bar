@@ -4,6 +4,8 @@
 
 This is a progress-bar app with some animation. All the bar status and button values are fetched from endpoint. Therefore, the data will be vanished once refresh the page.
 
+**Website:** https://gymassist.herokuapp.com
+
 ## Discription
 
 The mainly tools have been used in this App are **React, Webpack and bootstrap**. React remains all the data states, which will be altered when click event is triggering. Webpack helps to pack all the html, css, scss and js file, and compress them to a smaller version. Finally, Bootstrap gives this App a responsive layout.
@@ -25,6 +27,11 @@ Secondly, make sure you get all the package in the **package.json**(both depende
 ```javascript
 npm install --save <packageName>
 npm install --save-dev <packageName>
+```
+
+shortcut
+```javascript
+npm install
 ```
 
 Lastly, run the command line
