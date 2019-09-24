@@ -4,7 +4,7 @@
 
 This is a progress-bar app with some animation. All the bar status and button values are fetched from endpoint. Therefore, the data will be vanished once refresh the page.
 
-**Website:** https://gymassist.herokuapp.com
+**Website:** https://dynamic-bars.herokuapp.com
 
 ## Discription
 
@@ -29,7 +29,7 @@ npm install --save <packageName>
 npm install --save-dev <packageName>
 ```
 
-shortcut
+**shortcut:**
 ```javascript
 npm install
 ```
